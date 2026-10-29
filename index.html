@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIAP RSIL</title>
-    <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbxmG2F8sVrl4oCl5R7nWkeI0gpdOE11RWACdL-rlvJiRgBnkaSqDQvGAhP7zWb900Bi/exec">
-    <script>
-        window.location.replace("https://script.google.com/macros/s/AKfycbxmG2F8sVrl4oCl5R7nWkeI0gpdOE11RWACdL-rlvJiRgBnkaSqDQvGAhP7zWb900Bi/exec");
-    </script>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding-top: 80px; color: #555; }
-    </style>
+  <meta charset="UTF-8">
+  <title>SIAP-RSIL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1b5e20">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="iconsiap.png">
+  <link rel="apple-touch-icon" href="iconsiap.png">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #1b5e20;
+      background: #ffffff;
+      transition: opacity .3s;
+    }
+    #loading.hilang { opacity: 0; pointer-events: none; }
+    .spinner {
+      width: 38px; height: 38px;
+      border: 4px solid #c8e6c9;
+      border-top-color: #1b5e20;
+      border-radius: 50%;
+      animation: putar 0.9s linear infinite;
+    }
+    @keyframes putar { to { transform: rotate(360deg); } }
+    iframe {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-    <p>Mengalihkan ke aplikasi SIAP...</p>
-    <p>Kalau tidak otomatis pindah, <a href="https://script.google.com/macros/s/AKfycbxmG2F8sVrl4oCl5R7nWkeI0gpdOE11RWACdL-rlvJiRgBnkaSqDQvGAhP7zWb900Bi/exec">klik di sini</a>.</p>
+  <div id="loading">
+    <div class="spinner"></div>
+    <div>Memuat SIAP...</div>
+  </div>
+
+  <iframe
+    src="https://script.google.com/macros/s/AKfycbxmG2F8sVrl4oCl5R7nWkeI0gpdOE11RWACdL-rlvJiRgBnkaSqDQvGAhP7zWb900Bi/exec"
+    title="SIAP"
+    allow="clipboard-write; fullscreen"
+    onload="document.getElementById('loading').classList.add('hilang')">
+  </iframe>
 </body>
 </html>
